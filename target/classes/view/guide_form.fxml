@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.wildlifetourismmanagementsystem.controller.GuideFormController">
+   <children>
+      <Label layoutX="369.0" layoutY="62.0" text="Guide Management">
+         <font>
+            <Font name="Georgia" size="76.0" />
+         </font>
+      </Label>
+      <Label layoutX="259.0" layoutY="247.0" text="Guide NIC">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNic" layoutX="558.0" layoutY="237.0" prefHeight="43.0" prefWidth="363.0" />
+      <Label layoutX="259.0" layoutY="322.0" text="Guide Name">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtName" layoutX="558.0" layoutY="312.0" prefHeight="43.0" prefWidth="363.0" />
+      <Label layoutX="259.0" layoutY="395.0" text="Mobile Number">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtMobile" layoutX="558.0" layoutY="385.0" prefHeight="43.0" prefWidth="363.0" />
+      <Label layoutX="259.0" layoutY="464.0" text="Licence Expair Date">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="date" layoutX="558.0" layoutY="454.0" prefHeight="43.0" prefWidth="363.0" />
+      <Label layoutX="259.0" layoutY="536.0" text="Address">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtAddress" layoutX="558.0" layoutY="526.0" prefHeight="43.0" prefWidth="363.0" />
+      <Label layoutX="253.0" layoutY="611.0" text="Package ID">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPackage" layoutX="558.0" layoutY="601.0" prefHeight="43.0" prefWidth="363.0" />
+      <Label layoutX="258.0" layoutY="677.0" text="Admin Email">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEmail" layoutX="558.0" layoutY="667.0" prefHeight="43.0" prefWidth="363.0" />
+      <JFXButton fx:id="btnTouAdd" layoutX="736.0" layoutY="901.0" minHeight="60.0" onAction="#btnTouAddOnAction" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Add">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-add-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnTouView" layoutX="1103.0" layoutY="901.0" onAction="#btnTouViewOnAction" prefHeight="60.0" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="View">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-view-94.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnTouDelete" layoutX="921.0" layoutY="901.0" minHeight="60.0" onAction="#btnTouDeleteOnAction" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Delete">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-delete-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnTouUpdate" layoutX="1283.0" layoutY="901.0" onAction="#btnTouUpdateOnAction" prefHeight="60.0" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Update">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-update-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="315.0" fitWidth="363.0" layoutX="1089.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/pictures/Guide.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

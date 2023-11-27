@@ -1,0 +1,64 @@
+#recId{
+    -fx-background-color: black;
+    -fx-opacity: 0.5;
+}
+#btnLoginButton{
+    -fx-background-radius: 7px;
+    -fx-border-radius: 7px;
+    -fx-background-color: #ffffff;
+}
+#btnLoginButton:hover{
+    -fx-background-color:#49b3ea;
+    -fx-text-fill: #ffffff;
+}
+#btnLoginButton:pressed{
+    -fx-background-color: #badc58;
+    -fx-text-fill: #ffffff;
+}
+#btnFor{
+    -fx-text-fill: #49b3ea;
+}
+
+#btnFor:hover{
+    -fx-text-fill: #eb4d4b;
+}
+#btnFor:pressed{
+    -fx-text-fill: #000000;
+}
+#txtPassword{
+    -fx-background-color: rgba(255, 255, 255, 0);
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #ffffff;
+    -fx-border-color-bottom:#ffffff;
+
+}
+.password-field {
+    -fx-border-color: transparent transparent white transparent;
+}
+
+#txtUsername{
+    -fx-background-color: rgba(255, 255, 255, 0);
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #ffffff;
+    -fx-border-color-bottom:#ffffff;
+
+}
+.userName-field {
+    -fx-border-color: transparent transparent white transparent;
+}
+#rec2{
+    -fx-border-color: rgba(255, 255, 255, 0);
+}
+#signUp{
+    -fx-text-fill:#49b3ea;
+}
+#signUp:hover{
+    -fx-text-fill:#eb4d4b;
+}
+
+
+
+
+
+
+

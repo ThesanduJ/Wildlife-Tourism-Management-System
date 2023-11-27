@@ -1,0 +1,46 @@
+#btnTouView{
+    -fx-background-color: #686de0;
+    -fx-background-radius: 7px;
+    -fx-border-radius: 7px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+#btnTouAdd{
+    -fx-background-color: #686de0;
+    -fx-background-radius: 7px;
+    -fx-border-radius: 7px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+#btnTouDelete{
+    -fx-background-color: #686de0;
+    -fx-background-radius: 7px;
+    -fx-border-radius: 7px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+#btnTouUpdate{
+    -fx-background-color: #686de0;
+    -fx-background-radius: 7px;
+    -fx-border-radius: 7px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+
+#btnTouView:hover{
+    -fx-background-color: #7ed6df;
+
+}
+#btnTouAdd:hover{
+    -fx-background-color: #7ed6df;
+
+}
+#btnTouDelete:hover{
+    -fx-background-color: #7ed6df;
+
+}
+#btnTouUpdate:hover{
+    -fx-background-color: #7ed6df;
+
+}

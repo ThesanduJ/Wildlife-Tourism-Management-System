@@ -1,0 +1,47 @@
+#pane{
+    -fx-border-color: rgba(0, 0, 0, 0);
+}
+#btnDashboard:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+}
+#btnCashier:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+}
+#btnTicket:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+}
+#btnTourist:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+}
+#btnGuide:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+}
+#btnLaw:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+}
+#btnDriver:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+}
+#btnVehicle:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+}
+#btnLogout:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+}
+#btnPackage:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+}
+#btnFinance:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+}

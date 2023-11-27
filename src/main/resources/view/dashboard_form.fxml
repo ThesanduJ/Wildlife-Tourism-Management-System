@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNode1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.wildlifetourismmanagementsystem.controller.DashboardFormController">
+   <children>
+      <AnchorPane fx:id="pane" layoutX="345.0" prefHeight="1080.0" prefWidth="1572.0" stylesheets="@../style/dashboard.css">
+         <children>
+            <Label fx:id="labDate" layoutX="520.0" layoutY="159.0" prefHeight="16.0" prefWidth="0.0" style="-fx-background-color: yellow;" />
+            <ImageView fitHeight="1080.0" fitWidth="1572.0" layoutX="7.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/pictures/pexels-margerretta-902756.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="263.0" layoutY="288.0" text="Welcome To the Wild Sanctuary" textFill="WHITE">
+               <font>
+                  <Font name="Georgia" size="77.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="1080.0" layoutX="-2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0">
+         <fill>
+            <LinearGradient endX="0.8952380952380953" endY="0.1619047619047619" startY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.501960813999176" blue="0.9411764740943909" opacity="0.8700000047683716" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.35260000824928284" green="0.7923466563224792" blue="0.8600000143051147" opacity="0.46003830432891846" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="59.0" fitWidth="59.0" layoutX="41.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icon/user.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="logInName" layoutX="118.0" layoutY="49.0" prefHeight="24.0" prefWidth="149.0">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnCashier" layoutX="2.0" layoutY="281.0" onAction="#btnCashierOnAction" prefHeight="51.0" prefWidth="344.0" stylesheets="@../style/dashboard.css" text="Cashier">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/cashier.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnTicket" layoutY="332.0" onAction="#btnTicketOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Tickets">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/techny-ticket.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnTourist" layoutX="1.0" layoutY="383.0" onAction="#btnTouristOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Tourist">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-tourist.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnGuide" layoutY="434.0" onAction="#btnGuideOonAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Guide">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/guide.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnDriver" layoutX="2.0" layoutY="485.0" onAction="#btnDriverOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Driver">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-driver-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnVehicle" layoutY="536.0" onAction="#btnVehicleOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Vehicle">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-jeep-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnLogout" layoutX="-4.0" layoutY="907.0" onAction="#btnLogoutOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Logout">
+         <graphic>   
+            <ImageView fitHeight="43.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-logout-72.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnPackage" layoutX="2.0" layoutY="587.0" onAction="#btnPackageOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Packages">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-packages-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnFinance" layoutX="2.0" layoutY="638.0" onAction="#btnFinanceOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Finance">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-cash-receipt-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

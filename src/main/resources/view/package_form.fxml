@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.wildlifetourismmanagementsystem.controller.PackageFormController">
+   <children>
+      <Label layoutX="419.0" layoutY="86.0" text="Package Management">
+         <font>
+            <Font name="Georgia" size="76.0" />
+         </font>
+      </Label>
+      <Label layoutX="291.0" layoutY="309.0" text="Package ID">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPackageId" layoutX="577.0" layoutY="299.0" prefHeight="43.0" prefWidth="363.0" />
+      <Label layoutX="291.0" layoutY="596.0" text="Package Type">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="291.0" layoutY="447.0" text="Package Price">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPackagePrice" layoutX="577.0" layoutY="437.0" prefHeight="43.0" prefWidth="363.0" />
+      <Label layoutX="291.0" layoutY="523.0" text="Package Features">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="291.0" layoutY="379.0" text="Description">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPackageDescription" layoutX="577.0" layoutY="369.0" prefHeight="43.0" prefWidth="363.0" />
+      <JFXButton fx:id="btnTouAdd" layoutX="808.0" layoutY="807.0" minHeight="60.0" onAction="#btnTouAddOnAction" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Add">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-add-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnTouView" layoutX="1175.0" layoutY="807.0" onAction="#btnTouViewOnAction" prefHeight="60.0" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="View">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-view-94.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnTouDelete" layoutX="993.0" layoutY="807.0" minHeight="60.0" onAction="#btnTouDeleteOnAction" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Delete">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-delete-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnTouUpdate" layoutX="1355.0" layoutY="807.0" onAction="#btnTouUpdateOnAction" prefHeight="60.0" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Update">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-update-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="317.0" fitWidth="304.0" layoutX="1125.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/pictures/packages.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtPackageType" layoutX="577.0" layoutY="587.0" prefHeight="43.0" prefWidth="363.0" />
+      <TextField fx:id="txtPackageFeatures" layoutX="577.0" layoutY="514.0" prefHeight="43.0" prefWidth="363.0" />
+   </children>
+</AnchorPane>

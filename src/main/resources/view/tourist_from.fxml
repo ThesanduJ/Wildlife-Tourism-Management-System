@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="1080.0" prefWidth="1572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.wildlifetourismmanagementsystem.controller.TouristFromController">
+   <children>
+      <Label layoutX="457.0" layoutY="68.0" text="Tourist Registration">
+         <font>
+            <Font name="Georgia" size="76.0" />
+         </font>
+      </Label>
+      <Label layoutX="130.0" layoutY="282.0" text="NIC Number">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label layoutX="130.0" layoutY="343.0" text="Name">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label layoutX="130.0" layoutY="863.0" text="Age">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label layoutX="132.0" layoutY="420.0" text="Adult/Child">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label layoutX="132.0" layoutY="480.0" text="Tourist Email">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label layoutX="130.0" layoutY="540.0" text="Mobile Number">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label layoutX="130.0" layoutY="601.0" text="Local/Foreign">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label layoutX="130.0" layoutY="675.0" text="Cashier ID">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label layoutX="130.0" layoutY="747.0" text="Address">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label layoutX="130.0" layoutY="804.0" text="Passport Number">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <TextField fx:id="txtNIC" layoutX="385.0" layoutY="278.0" prefHeight="43.0" prefWidth="363.0" />
+      <TextField fx:id="txtName" layoutX="385.0" layoutY="339.0" prefHeight="43.0" prefWidth="363.0" />
+      <TextField fx:id="txtEmail" layoutX="385.0" layoutY="470.0" prefHeight="43.0" prefWidth="363.0" />
+      <TextField fx:id="txtMobileNumber" layoutX="385.0" layoutY="536.0" prefHeight="43.0" prefWidth="363.0" />
+      <TextField fx:id="txtCashierId" layoutX="385.0" layoutY="671.0" prefHeight="43.0" prefWidth="363.0" />
+      <TextField fx:id="txtAddress" layoutX="385.0" layoutY="737.0" prefHeight="43.0" prefWidth="363.0" />
+      <TextField fx:id="txtPassportId" layoutX="385.0" layoutY="800.0" prefHeight="43.0" prefWidth="363.0" />
+      <ChoiceBox fx:id="adultOrChild" layoutX="385.0" layoutY="410.0" prefHeight="43.0" prefWidth="363.0" />
+      <ChoiceBox fx:id="localOrForeign" layoutX="385.0" layoutY="597.0" prefHeight="43.0" prefWidth="363.0" />
+      <Label layoutX="130.0" layoutY="223.0" text="Tourist ID">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTouristId" layoutX="385.0" layoutY="213.0" prefHeight="43.0" prefWidth="363.0" />
+      <JFXButton fx:id="btnTouAdd" layoutX="819.0" layoutY="919.0" minHeight="60.0" onAction="#btnTouAddOnAction" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Add">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-add-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnTouView" layoutX="1186.0" layoutY="919.0" onAction="#btnTouViewOnAction" prefHeight="60.0" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="View">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-view-94.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnTouDelete" layoutX="1004.0" layoutY="919.0" minHeight="60.0" onAction="#btnTouDeleteOnAction" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Delete">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-delete-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnTouUpdate" layoutX="1366.0" layoutY="919.0" onAction="#btnTouUpdateOnAction" prefHeight="60.0" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Update">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-update-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="374.0" fitWidth="503.0" layoutX="999.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/pictures/registration.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtAge" layoutX="385.0" layoutY="866.0" prefHeight="43.0" prefWidth="363.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="650.0" prefWidth="982.0" stylesheets="@../style/login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.wildlifetourismmanagementsystem.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="1039.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/pictures/loginPage.jpg" />
+         </image></ImageView>
+      <Rectangle fx:id="recId" arcHeight="5.0" arcWidth="5.0" fill="#050505" height="550.0" layoutX="276.0" layoutY="50.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="434.0">
+         <effect>
+            <GaussianBlur radius="7.0" />
+         </effect>
+      </Rectangle>
+      <Label fx:id="title" layoutX="431.0" layoutY="120.0" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="44.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="txtPassword" layoutX="406.0" layoutY="312.0" promptText="password" stylesheets="@../style/login.css">
+         <font>
+            <Font size="14.0" />
+         </font></PasswordField>
+      <JFXButton fx:id="btnLoginButton" layoutX="437.0" layoutY="407.0" onAction="#btnLoginOnAction" prefHeight="31.0" prefWidth="101.0" text="login">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <stylesheets>
+            <URL value="@../style/login.css" />
+            <URL value="@../style/login.css" />
+         </stylesheets>
+      </JFXButton>
+      <JFXButton fx:id="btnFor" layoutX="412.0" layoutY="479.0" onAction="#btnForgetOnAction" text="Forget Password?" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TextField fx:id="txtUsername" layoutX="406.0" layoutY="253.0" promptText="username">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Rectangle fx:id="rec2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="1.0" layoutX="407.0" layoutY="280.0" stroke="TRANSPARENT" strokeType="INSIDE" width="182.0" />
+      <JFXButton fx:id="signUp" layoutX="552.0" layoutY="520.0" onAction="#btnSignUpOnAction" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="393.0" layoutY="524.0" text="Don't have an account ?" textFill="WHITE" />
+   </children>
+</AnchorPane>

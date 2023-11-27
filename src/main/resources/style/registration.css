@@ -1,0 +1,41 @@
+#btnRegistration{
+    -fx-background-color:#49b3ea;
+    -fx-background-radius: 7px;
+    -fx-border-radius: 7px;
+}
+#btnLogin2{
+    -fx-text-fill: #49b3ea;
+}
+
+#btnRegistration:hover{
+    -fx-background-color:#badc58;
+}
+#btnLogin2:hover{
+    -fx-text-fill: #eb4d4b;
+}
+#btnLogin2:pressed{
+    -fx-text-fill: #000000;
+}
+#txtUsername{
+    -fx-background-color: rgb(223, 249, 251);
+}
+#txtEmail{
+    -fx-background-color: rgb(223, 249, 251);
+}
+#txtPassword{
+    -fx-background-color: rgba(255, 255, 255, 0);
+
+}
+.password-field {
+    -fx-border-color: transparent transparent black transparent;
+}
+#txtRePassword{
+    -fx-background-color: rgba(255, 255, 255, 0);
+
+}
+.password-field {
+    -fx-border-color: transparent transparent black transparent;
+}
+#root{
+    -fx-background-color: #dff9fb;
+}
