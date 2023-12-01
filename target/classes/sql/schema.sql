@@ -61,6 +61,7 @@ CREATE TABLE finance_details(
                                 ticket_price DECIMAL(10,2),
                                 package_price DECIMAL(10,2),
                                 paid_amount DECIMAL(10,2),
+                                qty INT,
                                 FOREIGN KEY(ticket_id) REFERENCES tickets(ticket_id) on update cascade on delete cascade,
                                 FOREIGN KEY(tourist_id) REFERENCES tourist(tourist_id) on update cascade on delete cascade
 );

@@ -18,27 +18,27 @@
             <Font name="Georgia" size="76.0" />
          </font>
       </Label>
-      <Label layoutX="324.0" layoutY="307.0" text="Tourist ID">
+      <Label layoutX="324.0" layoutY="235.0" text="Tourist ID">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="324.0" layoutY="380.0" text="Ticket ID">
+      <Label layoutX="324.0" layoutY="308.0" text="Ticket ID">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="324.0" layoutY="452.0" text="Package ID">
+      <Label layoutX="324.0" layoutY="380.0" text="Package ID">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="324.0" layoutY="519.0" text="Ticket Price">
+      <Label layoutX="324.0" layoutY="447.0" text="Ticket Price">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="324.0" layoutY="589.0" text="Package Price">
+      <Label layoutX="324.0" layoutY="517.0" text="Package Price">
          <font>
             <Font size="19.0" />
          </font>
@@ -100,16 +100,22 @@
             <Image url="@../assets/pictures/finance.png" />
          </image>
       </ImageView>
-      <ComboBox fx:id="ticketId" layoutX="548.0" layoutY="371.0" onAction="#comTicketOnAction" prefHeight="43.0" prefWidth="353.0" />
-      <ComboBox fx:id="packageId" layoutX="548.0" layoutY="443.0" onAction="#comPackageOnAction" prefHeight="43.0" prefWidth="353.0" />
-      <ComboBox fx:id="touristId" layoutX="548.0" layoutY="298.0" prefHeight="43.0" prefWidth="353.0" />
-      <Label fx:id="lblTicketPrice" layoutX="680.0" layoutY="523.0" textFill="RED" />
+      <ComboBox fx:id="ticketId" layoutX="548.0" layoutY="299.0" onAction="#comTicketOnAction" prefHeight="43.0" prefWidth="353.0" />
+      <ComboBox fx:id="packageId" layoutX="548.0" layoutY="371.0" onAction="#comPackageOnAction" prefHeight="43.0" prefWidth="353.0" />
+      <ComboBox fx:id="touristId" layoutX="548.0" layoutY="226.0" prefHeight="43.0" prefWidth="353.0" />
+      <Label fx:id="lblTicketPrice" layoutX="680.0" layoutY="451.0" textFill="RED" />
       <Label fx:id="lblTotalPrice" layoutX="680.0" layoutY="701.0" textFill="RED" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="43.0" layoutX="548.0" layoutY="510.0" stroke="BLACK" strokeType="INSIDE" width="353.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="43.0" layoutX="548.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="353.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="43.0" layoutX="548.0" layoutY="688.0" stroke="BLACK" strokeType="INSIDE" width="353.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="43.0" layoutX="548.0" layoutY="837.0" stroke="BLACK" strokeType="INSIDE" width="353.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="43.0" layoutX="548.0" layoutY="584.0" stroke="BLACK" strokeType="INSIDE" width="353.0" />
-      <Label fx:id="lblPackagePrice" layoutX="680.0" layoutY="598.0" textFill="RED" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="43.0" layoutX="548.0" layoutY="512.0" stroke="BLACK" strokeType="INSIDE" width="353.0" />
+      <Label fx:id="lblPackagePrice" layoutX="680.0" layoutY="526.0" textFill="RED" />
       <Label fx:id="lblRemainingAmount" layoutX="680.0" layoutY="851.0" textFill="RED" />
+      <Label layoutX="324.0" layoutY="601.0" text="Ticket Quntity">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQty" layoutX="543.0" layoutY="592.0" prefHeight="43.0" prefWidth="363.0" />
    </children>
 </AnchorPane>

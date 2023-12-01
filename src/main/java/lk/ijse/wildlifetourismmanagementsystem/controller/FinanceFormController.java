@@ -6,11 +6,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import lk.ijse.wildlifetourismmanagementsystem.dto.FinanceDto;
 import lk.ijse.wildlifetourismmanagementsystem.dto.PackageDto;
 import lk.ijse.wildlifetourismmanagementsystem.dto.TicketDto;
@@ -58,22 +57,36 @@ public class FinanceFormController implements Initializable {
     @FXML
     private ComboBox<String> packageId;
 
-    private FinanceModel financeModel=new FinanceModel();
     @FXML
-    void btnTouAddOnAction(ActionEvent event) {
+    private TextField txtQty;
+    @FXML
+    void btnTouAddOnAction(ActionEvent event) throws SQLException {
             payment= Double.parseDouble(paidPrice.getText());
             double remaining =payment-total;
             lblRemainingAmount.setText(String.valueOf(remaining));
 
-//            String touristIdValue=touristId.getValue();
-//            String ticketIdValue=ticketId.getValue();
-//            String packageIdValue=packageId.getValue();
-//            double ticketPriceText= Double.parseDouble(lblTicketPrice.getText());
-//            double packagePriceText= Double.parseDouble(lblPackagePrice.getText());
-//            double paidPriceText= Double.parseDouble(paidPrice.getText());
-//
-//            FinanceDto financeDto=new FinanceDto(touristIdValue,ticketIdValue,packageIdValue,ticketPriceText,packagePriceText,paidPriceText);
-//            boolean isAdd=financeModel.pay(financeDto);
+            String touristIds=touristId.getValue();
+            String ticketsId=ticketId.getValue();
+            String packagesId=packageId.getValue();
+
+            double ticketsPrice=Double.parseDouble(lblTicketPrice.getText());
+            double packagesPrice=Double.parseDouble(lblPackagePrice.getText());
+            double paidAmount=Double.parseDouble(paidPrice.getText());
+            int qty=Integer.parseInt(txtQty.getText());
+
+
+
+            FinanceDto dto=new FinanceDto(touristIds,ticketsId,packagesId,ticketsPrice,packagesPrice,paidAmount,qty);
+            FinanceModel financeModel=new FinanceModel();
+
+            try {
+                boolean isAdd=financeModel.placeBill(dto);
+                if (isAdd) new Alert(Alert.AlertType.INFORMATION,"Successfully Added!!!").show();
+                if (!isAdd) new Alert(Alert.AlertType.ERROR,"Something went wrong!!!").show();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
     }
 
     @FXML
@@ -160,10 +173,12 @@ public class FinanceFormController implements Initializable {
             lblTicketPrice.setText(String.valueOf(ticketDto.getPrice()));
             ticketPrice=ticketDto.getPrice();
             total=ticketPrice+packagePrice;
+            System.out.println(total);
             lblTotalPrice.setText(String.valueOf(total));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+
 
 }

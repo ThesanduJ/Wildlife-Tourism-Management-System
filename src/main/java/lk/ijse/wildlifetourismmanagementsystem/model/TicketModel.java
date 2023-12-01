@@ -1,7 +1,6 @@
 package lk.ijse.wildlifetourismmanagementsystem.model;
 
 import lk.ijse.wildlifetourismmanagementsystem.db.DbConnection;
-import lk.ijse.wildlifetourismmanagementsystem.dto.PackageDto;
 import lk.ijse.wildlifetourismmanagementsystem.dto.TicketDto;
 import lk.ijse.wildlifetourismmanagementsystem.dto.TouristDto;
 
@@ -13,6 +12,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TicketModel {
+
+
+    public static boolean updateQty(String ticketsId, int qty) throws SQLException {
+        Connection connection=DbConnection.getInstance().getConnection();
+        String sql="UPDATE tickets SET ticket_count = ticket_count - ? WHERE ticket_id = ?";
+        PreparedStatement pstm=connection.prepareStatement(sql);
+        pstm.setInt(1,qty);
+        pstm.setString(2,ticketsId);
+
+        return pstm.executeUpdate()>0;
+    }
+
     public boolean addTicket(TicketDto dto) throws SQLException {
         Connection connection= DbConnection.getInstance().getConnection();
         String sql="INSERT INTO tickets VALUES(?,?,?,?,?,?)";
@@ -123,4 +134,5 @@ public class TicketModel {
 
         return pstm.executeUpdate()>0;
     }
+
 }

@@ -1,17 +1,20 @@
 package lk.ijse.wildlifetourismmanagementsystem.dto;
 
+
 import lombok.*;
 
-@Getter
 @Setter
-@NoArgsConstructor
+@Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class FinanceDto {
-    private String touristId;
-    private String ticketId;
-    private String packageId;
-    private double ticketPrice;
-    private double packagePrice;
-    private double paidAmount;
+
+  private String touristIds;
+   private String ticketsId;
+   private String packagesId;
+   private double ticketsPrice;
+   private double packagesPrice;
+   private double paidAmount;
+   private int qty;
 }
