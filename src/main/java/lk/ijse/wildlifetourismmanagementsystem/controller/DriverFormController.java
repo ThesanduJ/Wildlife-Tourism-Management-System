@@ -92,7 +92,6 @@ public class DriverFormController  {
         String mobile=txtMobile.getText();
         String email=txtEmail.getText();
         String expairDate=date.getValue().toString();
-        String lawId1=txtViolatedLaw.getValue().toString();
         boolean validate=isValidate();
         DriverDto dto=new DriverDto(id,NIC,name,p_id,mobile,email,expairDate);
 
@@ -144,14 +143,14 @@ public class DriverFormController  {
             new Alert(Alert.AlertType.ERROR,"Something went wrong in a Package ID").show();
             return false;
         }
-        Pattern compile4=Pattern.compile("^(?:0|94|\\+94)?(?:7|11|07|107|011|1011)[1-9]{7}$\n");
+        Pattern compile4=Pattern.compile("(?:0|94|\\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|4|5|6|7|8)\\d)\\d{6}$");
         Matcher matcher4=compile4.matcher(txtMobile.getText());
         boolean matches4=matcher4.matches();
         if (!matches4){
             new Alert(Alert.AlertType.ERROR,"Something went wrong in a Mobile number").show();
             return false;
         }
-        Pattern compile5=Pattern.compile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$\n");
+        Pattern compile5=Pattern.compile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$");
         Matcher matcher5=compile5.matcher(txtEmail.getText());
         boolean matches5=matcher5.matches();
 
@@ -159,23 +158,7 @@ public class DriverFormController  {
             new Alert(Alert.AlertType.ERROR,"Something went wrong in a Email").show();
             return false;
         }
-        Pattern compile6=Pattern.compile("^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$\n");
-        Matcher matcher6=compile6.matcher(date.getValue().toString());
-        boolean matches6=matcher6.matches();
 
-        if (!matches6){
-            new Alert(Alert.AlertType.ERROR,"Something went wrong in a Date").show();
-            return false;
-        }
-
-        Pattern compile7=Pattern.compile("[L][0-9]{3,}");
-        Matcher matcher7=compile7.matcher(txtViolatedLaw.getValue().toString());
-        boolean matches7=matcher7.matches();
-
-        if (!matches7){
-            new Alert(Alert.AlertType.ERROR,"Something went wrong in a Law ID").show();
-            return false;
-        }
         return true;
     }
 

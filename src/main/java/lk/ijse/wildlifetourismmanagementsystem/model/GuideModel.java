@@ -2,7 +2,6 @@ package lk.ijse.wildlifetourismmanagementsystem.model;
 
 import lk.ijse.wildlifetourismmanagementsystem.db.DbConnection;
 import lk.ijse.wildlifetourismmanagementsystem.dto.GuideDto;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

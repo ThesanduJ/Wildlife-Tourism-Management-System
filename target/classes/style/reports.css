@@ -1,0 +1,65 @@
+#btnTouristReport:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+    -fx-text-fill: black;
+}
+#btnGuideReport:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+    -fx-text-fill: black;
+}
+#btnVehicleReport:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+    -fx-text-fill: black;
+}
+#btnDriverReport:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+    -fx-text-fill: black;
+}
+
+
+
+#btnTouristReport{
+    -fx-background-color: #686de0;
+    -fx-background-radius: 7px;
+    -fx-border-radius: 7px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+#btnGuideReport{
+    -fx-background-color: #686de0;
+    -fx-background-radius: 7px;
+    -fx-border-radius: 7px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+#btnVehicleReport{
+    -fx-background-color: #686de0;
+    -fx-background-radius: 7px;
+    -fx-border-radius: 7px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+#btnDriverReport{
+    -fx-background-color: #686de0;
+    -fx-background-radius: 7px;
+    -fx-border-radius: 7px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#btnFinanceReport:hover{
+    -fx-border-color: #c7ecee;
+    -fx-background-color: #c7ecee;
+    -fx-text-fill: black;
+}
+
+#btnFinanceReport{
+    -fx-background-color: #686de0;
+    -fx-background-radius: 7px;
+    -fx-border-radius: 7px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}

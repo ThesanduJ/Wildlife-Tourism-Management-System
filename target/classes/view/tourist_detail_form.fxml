@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.wildlifetourismmanagementsystem.controller.TouristDetailFormController">
+   <children>
+      <Label layoutX="548.0" layoutY="93.0" text="Tourist Details">
+         <font>
+            <Font name="Georgia" size="76.0" />
+         </font>
+      </Label>
+      <TableView fx:id="touristTable" layoutX="14.0" layoutY="255.0" prefHeight="453.0" prefWidth="1556.0">
+        <columns>
+            <TableColumn fx:id="colTouId" prefWidth="178.0" text="Tourist ID" />
+          <TableColumn fx:id="colNic" minWidth="7.0" prefWidth="178.0" text="Nic" />
+          <TableColumn fx:id="colName" prefWidth="178.0" text="Name" />
+            <TableColumn fx:id="colAge" prefWidth="178.0" text="Adult/Child" />
+            <TableColumn fx:id="colEmail" prefWidth="178.0" text="Email" />
+            <TableColumn fx:id="colNumber" prefWidth="178.0" text="Mobile Number" />
+            <TableColumn fx:id="colRegion" prefWidth="178.0" text="Region" />
+            <TableColumn fx:id="colCashierId" prefWidth="178.0" text="Cashier ID" />
+            <TableColumn fx:id="colAddress" prefWidth="178.0" text="Address" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

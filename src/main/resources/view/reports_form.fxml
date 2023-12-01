@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.wildlifetourismmanagementsystem.controller.ReportsFormController">
+   <children>
+      <Label layoutX="652.0" layoutY="106.0" text="Reports">
+         <font>
+            <Font name="Georgia" size="77.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnTouristReport" layoutX="209.0" layoutY="327.0" onAction="#btnTouristReportOnAction" prefHeight="229.0" prefWidth="302.0" stylesheets="@../style/reports.css" text="Tourist Report">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/Tourts%20report.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDriverReport" layoutX="666.0" layoutY="327.0" onAction="#btnDriverReportOnAction" prefHeight="229.0" prefWidth="302.0" stylesheets="@../style/reports.css" text="Driver Report">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/driver%20reports.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnVehicleReport" layoutX="1110.0" layoutY="327.0" onAction="#btnVehicleReportOnAction" prefHeight="229.0" prefWidth="302.0" stylesheets="@../style/reports.css" text="    Jeep Report">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/jeep%20report.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnGuideReport" layoutX="959.0" layoutY="600.0" onAction="#btnGuideReportOnAction" prefHeight="229.0" prefWidth="302.0" stylesheets="@../style/reports.css" text="Guide Report">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/guide%20report.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnFinanceReport" layoutX="484.0" layoutY="600.0" onAction="#btnFinanceReportOnAction" prefHeight="229.0" prefWidth="302.0" stylesheets="@../style/reports.css" text="Finance Report">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/Finance%20report.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

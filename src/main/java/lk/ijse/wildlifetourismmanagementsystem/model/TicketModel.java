@@ -15,13 +15,15 @@ import java.util.List;
 public class TicketModel {
     public boolean addTicket(TicketDto dto) throws SQLException {
         Connection connection= DbConnection.getInstance().getConnection();
-        String sql="INSERT INTO tickets VALUES(?,?,?,?)";
+        String sql="INSERT INTO tickets VALUES(?,?,?,?,?,?)";
         PreparedStatement pstm=connection.prepareStatement(sql);
 
         pstm.setString(1, dto.getTicket_id());
         pstm.setDouble(2,dto.getPrice());
         pstm.setString(3, dto.getTicket_type());
         pstm.setString(4, dto.getCashier_id());
+        pstm.setInt(5, dto.getTicketCount());
+        pstm.setString(6, dto.getPackageId());
 
         boolean isSaved=pstm.executeUpdate()>0;
         return isSaved;
@@ -42,7 +44,9 @@ public class TicketModel {
                     resultSet.getString(1),
                     resultSet.getDouble(2),
                     resultSet.getString(3),
-                    resultSet.getString(4)
+                    resultSet.getString(4),
+                    resultSet.getInt(5),
+                    resultSet.getString(6)
             ));
         }
 
@@ -68,9 +72,7 @@ public class TicketModel {
                     resultSet.getString(6),
                     resultSet.getString(7),
                     resultSet.getString(8),
-                    resultSet.getString(9),
-                    resultSet.getString(10),
-                    resultSet.getInt(11)
+                    resultSet.getString(9)
             ));
         }
 
@@ -91,8 +93,10 @@ public class TicketModel {
             double price = resultSet.getDouble(2);
             String ticketType = resultSet.getString(3);
             String cashierId = resultSet.getString(4);
+            int ticketCount=resultSet.getInt(5);
+            String packageId=resultSet.getString(6);
 
-            dto = new TicketDto(ticketId, price, ticketType, cashierId);
+            dto = new TicketDto(ticketId, price, ticketType, cashierId,ticketCount,packageId);
         }
         return dto;
     }
@@ -108,12 +112,14 @@ public class TicketModel {
 
     public boolean isUpdate(TicketDto dto) throws SQLException {
         Connection connection=DbConnection.getInstance().getConnection();
-        String sql="UPDATE tickets SET  price=?,ticket_type=?,cashier_id=? WHERE ticket_id=?";
+        String sql="UPDATE tickets SET  price=?,ticket_type=?,cashier_id=?,ticket_count=?,package_id=? WHERE ticket_id=?";
         PreparedStatement pstm=connection.prepareStatement(sql);
         pstm.setDouble(1,dto.getPrice());
         pstm.setString(2, dto.getTicket_type());
         pstm.setString(3, dto.getCashier_id());
-        pstm.setString(4, dto.getTicket_id());
+        pstm.setInt(4,dto.getTicketCount());
+        pstm.setString(5,dto.getPackageId());
+        pstm.setString(6, dto.getTicket_id());
 
         return pstm.executeUpdate()>0;
     }

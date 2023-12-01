@@ -13,4 +13,6 @@ public class TicketDto {
     private double price;
     private String ticket_type;
     private String cashier_id;
+    private int ticketCount;
+    private String packageId;
 }

@@ -17,15 +17,6 @@ CREATE TABLE cashier(
 );
 
 
-
-CREATE TABLE tickets(
-                        ticket_id VARCHAR(10) PRIMARY KEY,
-                        price DECIMAL(10,2)  ,
-                        ticket_type VARCHAR(50),
-                        cashier_id VARCHAR(10)  ,
-                        FOREIGN KEY(cashier_id) REFERENCES cashier(cashier_id) on update cascade on delete cascade
-);
-
 CREATE TABLE package(
                         package_id VARCHAR(10) PRIMARY KEY,
                         description TEXT,
@@ -34,12 +25,17 @@ CREATE TABLE package(
                         package_type TEXT
 );
 
-CREATE TABLE package_details(
-                                package_id VARCHAR(10),
-                                ticket_id VARCHAR(10) ,
-                                FOREIGN KEY(package_id) REFERENCES package(package_id) on update cascade on delete cascade,
-                                FOREIGN KEY(ticket_id) REFERENCES tickets(ticket_id) on update cascade on delete cascade
+CREATE TABLE tickets(
+                        ticket_id VARCHAR(10) PRIMARY KEY,
+                        price DECIMAL(10,2)  ,
+                        ticket_type VARCHAR(50),
+                        cashier_id VARCHAR(10),
+                        ticket_count INT,
+                        package_id VARCHAR(10) ,
+                        FOREIGN KEY(cashier_id) REFERENCES cashier(cashier_id) on update cascade on delete cascade,
+                        FOREIGN KEY(package_id) REFERENCES package(package_id) on update cascade on delete cascade
 );
+
 
 
 CREATE TABLE tourist(
@@ -52,8 +48,6 @@ CREATE TABLE tourist(
                         local_or_not VARCHAR(50),
                         cashier_id VARCHAR(10)  ,
                         address TEXT,
-                        passport_number VARCHAR(50)  ,
-                        age INT,
                         FOREIGN KEY(cashier_id) REFERENCES cashier(cashier_id) on update cascade on delete cascade
 );
 
@@ -102,7 +96,7 @@ CREATE TABLE jeep_driver(
 CREATE TABLE vehicle(
                         registration_id VARCHAR(10) PRIMARY KEY,
                         package_id VARCHAR(10),
-                        admin_email VARCHAR(10) ,
+                        admin_email VARCHAR(120) ,
                         permit_no INT,
                         permit_expair_date DATE,
                         licence_expair_date DATE,

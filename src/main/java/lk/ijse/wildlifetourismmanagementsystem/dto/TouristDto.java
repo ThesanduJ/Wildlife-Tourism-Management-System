@@ -17,6 +17,4 @@ public class TouristDto {
     private String region;
     private String cashierId;
     private String address;
-    private String passportId;
-    private int age;
 }

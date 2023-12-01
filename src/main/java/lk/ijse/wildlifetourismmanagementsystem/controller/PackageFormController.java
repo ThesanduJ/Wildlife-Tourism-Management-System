@@ -116,7 +116,7 @@ public class PackageFormController {
             new Alert(Alert.AlertType.ERROR,"Something went wrong in a Package ID").show();
             return false;
         }
-        Pattern compile1 = Pattern.compile("^[0-9]+$");
+        Pattern compile1 = Pattern.compile("^\\d*\\.?\\d+$");
         Matcher matcher1 = compile1.matcher(txtPackagePrice.getText());
         boolean matches1 = matcher1.matches();
 

@@ -39,6 +39,10 @@ public class TicketFormController implements Initializable {
 
     @FXML
     private TextField txtTicketId;
+    @FXML
+    private TextField txtTicketCount;
+    @FXML
+    private TextField txtPackageID;
     TicketModel model=new TicketModel();
 
     private String[] type={"Day Safari Tickets","Night Safari Tickets","Guided Safari Tours","Self-Drive Safari Permits","Specialized Safaris","Multi-Day Safari "};
@@ -49,13 +53,15 @@ public class TicketFormController implements Initializable {
         double price=Double.parseDouble(txtPrice.getText());
         String ticketT=ticketType.getValue();
         String cashierID=txtCashierId.getText();
+        int ticketCount=Integer.parseInt(txtTicketCount.getText());
+        String packageId=txtPackageID.getText();
 
-        TicketDto dto=new TicketDto(ticketId,price,ticketT,cashierID);
+        TicketDto dto=new TicketDto(ticketId,price,ticketT,cashierID,ticketCount,packageId);
 
         try {
             if (isValidate()) {
-                new Alert(Alert.AlertType.INFORMATION, "Added Successfully!!!").show();
                 boolean isSaved = model.addTicket(dto);
+                if (isSaved)new Alert(Alert.AlertType.INFORMATION, "Added Successfully!!!").show();
                 if (!isSaved) new Alert(Alert.AlertType.ERROR, "Something is Wrong!!!").show();
             }
         } catch (SQLException e) {
@@ -81,12 +87,14 @@ public class TicketFormController implements Initializable {
         double price=Double.parseDouble(txtPrice.getText());
         String ticketT=ticketType.getValue();
         String cashierID=txtCashierId.getText();
+        int ticketCount=Integer.parseInt(txtTicketCount.getText());
+        String packageId=txtPackageID.getText();
 
-        TicketDto dto=new TicketDto(ticketId,price,ticketT,cashierID);
+        TicketDto dto=new TicketDto(ticketId,price,ticketT,cashierID,ticketCount,packageId);
         try {
             if(isValidate()) {
-                new Alert(Alert.AlertType.INFORMATION, "Update Successfully!!!").show();
                 boolean isUpdate = model.isUpdate(dto);
+                if (isUpdate)new Alert(Alert.AlertType.INFORMATION, "Update Successfully!!!").show();
                 if (!isUpdate) new Alert(Alert.AlertType.ERROR, "Something went wrong!!!").show();
             }
         } catch (SQLException e) {
@@ -114,16 +122,17 @@ public class TicketFormController implements Initializable {
             return false;
         }
         Pattern compile1=Pattern.compile("[C][0-9]{3,}");
-        Matcher matcher1=compile.matcher(txtCashierId.getText());
-        boolean matches1=matcher.matches();
+        Matcher matcher1=compile1.matcher(txtCashierId.getText());
+        boolean matches1=matcher1.matches();
 
         if (!matches1){
             new Alert(Alert.AlertType.ERROR,"Something went wrong in a Cashier ID").show();
             return false;
         }
-        Pattern compile2=Pattern.compile("^[0-9]+$\n");
-        Matcher matcher2=compile.matcher(txtPrice.getText());
-        boolean matches2=matcher.matches();
+        Pattern compile2 = Pattern.compile("^\\d*\\.?\\d+$");
+        Matcher matcher2 = compile2.matcher(txtPrice.getText().toString());
+        boolean matches2 = matcher2.matches();
+
 
         if (!matches2){
             new Alert(Alert.AlertType.ERROR,"Something went wrong in a Ticket price").show();

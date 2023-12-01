@@ -58,9 +58,9 @@ public class VehicleFormController {
         VehicleDto dto=new VehicleDto(registration,packageId,adminEmail,permitNo,permitD,licenceD);
         try {
             if(isValidate()) {
-                new Alert(Alert.AlertType.INFORMATION, "Added Successfully!!!").show();
                 boolean isAdd = model.isAdd(dto);
                 if (!isAdd) new Alert(Alert.AlertType.ERROR, "Something went wrong!!!").show();
+                if (isAdd) new Alert(Alert.AlertType.INFORMATION, "Update Successfully!!!").show();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
@@ -91,9 +91,9 @@ public class VehicleFormController {
         VehicleDto dto=new VehicleDto(registration,packageId,adminEmail,permitNo,permitD,licenceD);
         try {
             if(isValidate()) {
-                new Alert(Alert.AlertType.INFORMATION, "Update Successfully!!!").show();
                 boolean isUpdate = model.isUpdate(dto);
                 if (!isUpdate) new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
+                if (isUpdate) new Alert(Alert.AlertType.INFORMATION, "Update Successfully!!!").show();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
@@ -105,7 +105,7 @@ public class VehicleFormController {
 
     }
     public boolean isValidate(){
-        Pattern compile=Pattern.compile("^[A-Z]{2}[\\d]{2}[A-Z]{2}[\\d]{4}$\n");
+        Pattern compile=Pattern.compile("[V][0-9]{3,}");
         Matcher matcher=compile.matcher(txtReg.getText());
         boolean matches=matcher.matches();
 
@@ -113,46 +113,46 @@ public class VehicleFormController {
             new Alert(Alert.AlertType.ERROR,"Something went wrong in a Registration number").show();
             return false;
         }
-        Pattern compile1=Pattern.compile("[P][0-9]{3,}");
-        Matcher matcher1=compile.matcher(txtReg.getText());
-        boolean matches1=matcher.matches();
-
-        if (!matches1){
-            new Alert(Alert.AlertType.ERROR,"Something went wrong in a Package Id").show();
-            return false;
-        }
-        Pattern compile2=Pattern.compile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$\n");
-        Matcher matcher2=compile.matcher(txtEmail.getText());
-        boolean matches2=matcher.matches();
+//        Pattern compile1=Pattern.compile("[P][0-9]{3,}");
+//        Matcher matcher1=compile1.matcher(txtReg.getText());
+//        boolean matches1=matcher1.matches();
+//
+//        if (!matches1){
+//            new Alert(Alert.AlertType.ERROR,"Something went wrong in a Package Id").show();
+//            return false;
+//        }
+        Pattern compile2=Pattern.compile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$");
+        Matcher matcher2=compile2.matcher(txtEmail.getText());
+        boolean matches2=matcher2.matches();
 
         if (!matches2){
             new Alert(Alert.AlertType.ERROR,"Something went wrong in a Email").show();
             return false;
         }
-        Pattern compile3=Pattern.compile("^[A-Z0-9]{6,10}$\n");
-        Matcher matcher3=compile.matcher(txtPermitNo.getText());
-        boolean matches3=matcher.matches();
-
-        if (!matches3){
-            new Alert(Alert.AlertType.ERROR,"Something went wrong in a Permit number").show();
-            return false;
-        }
-        Pattern compile4=Pattern.compile("^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$\n");
-        Matcher matcher4=compile.matcher(permitDate.getValue().toString());
-        boolean matches4=matcher.matches();
-
-        if (!matches4){
-            new Alert(Alert.AlertType.ERROR,"Something went wrong in a Permit ExpireDate").show();
-            return false;
-        }
-        Pattern compile5=Pattern.compile("^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$\n");
-        Matcher matcher5=compile.matcher(licenceDate.getValue().toString());
-        boolean matches5=matcher.matches();
-
-        if (!matches5){
-            new Alert(Alert.AlertType.ERROR,"Something went wrong in a Licence ExpireDate").show();
-            return false;
-        }
+//        Pattern compile3=Pattern.compile("^[A-Z0-9]{6,10}$\n");
+//        Matcher matcher3=compile3.matcher(txtPermitNo.getText());
+//        boolean matches3=matcher3.matches();
+//
+//        if (!matches3){
+//            new Alert(Alert.AlertType.ERROR,"Something went wrong in a Permit number").show();
+//            return false;
+//        }
+//        Pattern compile4=Pattern.compile("^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$\n");
+//        Matcher matcher4=compile4.matcher(permitDate.getValue().toString());
+//        boolean matches4=matcher4.matches();
+//
+//        if (!matches4){
+//            new Alert(Alert.AlertType.ERROR,"Something went wrong in a Permit ExpireDate").show();
+//            return false;
+//        }
+//        Pattern compile5=Pattern.compile("^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$\n");
+//        Matcher matcher5=compile5.matcher(licenceDate.getValue().toString());
+//        boolean matches5=matcher5.matches();
+//
+//        if (!matches5){
+//            new Alert(Alert.AlertType.ERROR,"Something went wrong in a Licence ExpireDate").show();
+//            return false;
+//        }
         return true;
     }
 }

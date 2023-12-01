@@ -56,7 +56,7 @@
             <Font name="Arial Bold" size="13.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnCashier" layoutX="2.0" layoutY="281.0" onAction="#btnCashierOnAction" prefHeight="51.0" prefWidth="344.0" stylesheets="@../style/dashboard.css" text="Cashier">
+      <JFXButton fx:id="btnCashier" layoutX="2.0" layoutY="254.0" onAction="#btnCashierOnAction" prefHeight="51.0" prefWidth="344.0" stylesheets="@../style/dashboard.css" text="Cashier">
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -65,7 +65,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnTicket" layoutY="332.0" onAction="#btnTicketOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Tickets">
+      <JFXButton fx:id="btnTicket" layoutY="305.0" onAction="#btnTicketOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Tickets">
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -74,7 +74,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnTourist" layoutX="1.0" layoutY="383.0" onAction="#btnTouristOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Tourist">
+      <JFXButton fx:id="btnTourist" layoutX="1.0" layoutY="356.0" onAction="#btnTouristOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Tourist">
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -83,7 +83,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnGuide" layoutY="434.0" onAction="#btnGuideOonAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Guide">
+      <JFXButton fx:id="btnGuide" layoutY="407.0" onAction="#btnGuideOonAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Guide">
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -92,7 +92,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnDriver" layoutX="2.0" layoutY="485.0" onAction="#btnDriverOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Driver">
+      <JFXButton fx:id="btnDriver" layoutX="2.0" layoutY="458.0" onAction="#btnDriverOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Driver">
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -101,7 +101,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnVehicle" layoutY="536.0" onAction="#btnVehicleOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Vehicle">
+      <JFXButton fx:id="btnVehicle" layoutY="509.0" onAction="#btnVehicleOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Vehicle">
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -119,7 +119,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnPackage" layoutX="2.0" layoutY="587.0" onAction="#btnPackageOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Packages">
+      <JFXButton fx:id="btnPackage" layoutX="2.0" layoutY="560.0" onAction="#btnPackageOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Packages">
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -128,11 +128,20 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnFinance" layoutX="2.0" layoutY="638.0" onAction="#btnFinanceOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Finance">
+      <JFXButton fx:id="btnFinance" layoutX="2.0" layoutY="611.0" onAction="#btnFinanceOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Finance">
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icon/icons8-cash-receipt-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnReport" layoutX="2.0" layoutY="662.0" onAction="#btnReportOnAction" prefHeight="51.0" prefWidth="350.0" stylesheets="@../style/dashboard.css" text="Reports">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon/icons8-business-report-96.png" />
                </image>
             </ImageView>
          </graphic>

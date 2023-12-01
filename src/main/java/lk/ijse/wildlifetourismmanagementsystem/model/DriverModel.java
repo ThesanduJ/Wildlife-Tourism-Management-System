@@ -15,7 +15,7 @@ public class DriverModel {
 
     public boolean isAdd(DriverDto dto) throws SQLException {
         Connection connection= DbConnection.getInstance().getConnection();
-        String sql="INSER INTO jeep_driver VALUES(?,?,?,?,?,?,?)";
+        String sql="INSERT INTO jeep_driver VALUES(?,?,?,?,?,?,?)";
         PreparedStatement pstm=connection.prepareStatement(sql);
 
         pstm.setString(1, dto.getId());

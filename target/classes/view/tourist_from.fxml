@@ -17,15 +17,11 @@
             <Font name="Georgia" size="76.0" />
          </font>
       </Label>
-      <Label layoutX="130.0" layoutY="282.0" text="NIC Number">
+      <Label layoutX="129.0" layoutY="288.0" text="NIC Number">
          <font>
             <Font size="19.0" />
          </font></Label>
-      <Label layoutX="130.0" layoutY="343.0" text="Name">
-         <font>
-            <Font size="19.0" />
-         </font></Label>
-      <Label layoutX="130.0" layoutY="863.0" text="Age">
+      <Label layoutX="130.0" layoutY="349.0" text="Name">
          <font>
             <Font size="19.0" />
          </font></Label>
@@ -53,26 +49,21 @@
          <font>
             <Font size="19.0" />
          </font></Label>
-      <Label layoutX="130.0" layoutY="804.0" text="Passport Number">
-         <font>
-            <Font size="19.0" />
-         </font></Label>
       <TextField fx:id="txtNIC" layoutX="385.0" layoutY="278.0" prefHeight="43.0" prefWidth="363.0" />
       <TextField fx:id="txtName" layoutX="385.0" layoutY="339.0" prefHeight="43.0" prefWidth="363.0" />
       <TextField fx:id="txtEmail" layoutX="385.0" layoutY="470.0" prefHeight="43.0" prefWidth="363.0" />
       <TextField fx:id="txtMobileNumber" layoutX="385.0" layoutY="536.0" prefHeight="43.0" prefWidth="363.0" />
       <TextField fx:id="txtCashierId" layoutX="385.0" layoutY="671.0" prefHeight="43.0" prefWidth="363.0" />
       <TextField fx:id="txtAddress" layoutX="385.0" layoutY="737.0" prefHeight="43.0" prefWidth="363.0" />
-      <TextField fx:id="txtPassportId" layoutX="385.0" layoutY="800.0" prefHeight="43.0" prefWidth="363.0" />
       <ChoiceBox fx:id="adultOrChild" layoutX="385.0" layoutY="410.0" prefHeight="43.0" prefWidth="363.0" />
       <ChoiceBox fx:id="localOrForeign" layoutX="385.0" layoutY="597.0" prefHeight="43.0" prefWidth="363.0" />
-      <Label layoutX="130.0" layoutY="223.0" text="Tourist ID">
+      <Label layoutX="133.0" layoutY="223.0" text="Tourist ID">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
       <TextField fx:id="txtTouristId" layoutX="385.0" layoutY="213.0" prefHeight="43.0" prefWidth="363.0" />
-      <JFXButton fx:id="btnTouAdd" layoutX="819.0" layoutY="919.0" minHeight="60.0" onAction="#btnTouAddOnAction" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Add">
+      <JFXButton fx:id="btnTouAdd" layoutX="818.0" layoutY="867.0" minHeight="60.0" onAction="#btnTouAddOnAction" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Add">
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -84,7 +75,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnTouView" layoutX="1186.0" layoutY="919.0" onAction="#btnTouViewOnAction" prefHeight="60.0" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="View">
+      <JFXButton fx:id="btnTouView" layoutX="1185.0" layoutY="867.0" onAction="#btnTouViewOnAction" prefHeight="60.0" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="View">
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -96,7 +87,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnTouDelete" layoutX="1004.0" layoutY="919.0" minHeight="60.0" onAction="#btnTouDeleteOnAction" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Delete">
+      <JFXButton fx:id="btnTouDelete" layoutX="1003.0" layoutY="867.0" minHeight="60.0" onAction="#btnTouDeleteOnAction" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Delete">
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -108,7 +99,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnTouUpdate" layoutX="1366.0" layoutY="919.0" onAction="#btnTouUpdateOnAction" prefHeight="60.0" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Update">
+      <JFXButton fx:id="btnTouUpdate" layoutX="1365.0" layoutY="867.0" onAction="#btnTouUpdateOnAction" prefHeight="60.0" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="Update">
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -125,6 +116,5 @@
             <Image url="@../assets/pictures/registration.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtAge" layoutX="385.0" layoutY="866.0" prefHeight="43.0" prefWidth="363.0" />
    </children>
 </AnchorPane>
