@@ -8,9 +8,15 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import lk.ijse.wildlifetourismmanagementsystem.db.DbConnection;
 import lk.ijse.wildlifetourismmanagementsystem.dto.PackageDto;
 import lk.ijse.wildlifetourismmanagementsystem.model.PackageModel;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -19,17 +25,9 @@ import java.util.regex.Pattern;
 
 public class PackageFormController {
 
-    @FXML
-    private JFXButton btnTouAdd;
-
-    @FXML
-    private JFXButton btnTouDelete;
-
-    @FXML
-    private JFXButton btnTouUpdate;
-
-    @FXML
-    private JFXButton btnTouView;
+    static {
+        new Alert(Alert.AlertType.INFORMATION,"If you want to delete any data enter the package id you want and press delete button!!").show();
+    }
 
     @FXML
     private TextField txtPackageType;
@@ -103,8 +101,19 @@ public class PackageFormController {
     }
 
     @FXML
-    void btnTouViewOnAction(ActionEvent event) {
+    void btnTouViewOnAction(ActionEvent event) throws JRException, SQLException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/reports/Package.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
 
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport, //compiled report
+                        null,
+                        DbConnection.getInstance().getConnection() //database connection
+                );
+
+        JasperViewer.viewReport(jasperPrint, false);
     }
 
     public boolean isValidation(){

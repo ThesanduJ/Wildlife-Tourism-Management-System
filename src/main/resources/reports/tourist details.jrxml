@@ -87,55 +87,61 @@
 		<band height="26" splitType="Stretch">
 			<staticText>
 				<reportElement style="Column header" x="0" y="7" width="92" height="18" forecolor="#000000" uuid="bf4643a4-eb7e-49ed-a800-d2f2a0122b3b">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ff8f2697-c6f4-432d-b3de-071a3d781a0f"/>
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font isBold="false"/>
+					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[tourist_id]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="92" y="7" width="92" height="18" forecolor="#000000" uuid="b8459fdf-9388-4011-8ee0-3a26bd63fe29">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0fcf7dd6-b8ab-4b66-a67a-e9ce1b15ac5e"/>
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font isBold="false"/>
+					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[nic]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="184" y="7" width="92" height="18" forecolor="#000000" uuid="28d42993-b1a3-4d29-beb9-8b4bf90c46b7">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5efe466f-136a-403e-a10d-65df75d02050"/>
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font isBold="false"/>
+					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[name]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="276" y="7" width="135" height="18" forecolor="#000000" uuid="dbc9ba00-47f0-48a2-af98-e2ae16931b27">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8d014575-888d-4388-9b9c-8442ef48a492"/>
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font isBold="false"/>
+					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[tourist_email]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="400" y="7" width="90" height="18" forecolor="#000000" uuid="e6eeaae2-4ace-48ca-8c34-4b657135308e">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2b3c0027-628a-4280-bf00-32f5cfcc290f"/>
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font isBold="false"/>
+					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[phone_number]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="500" y="7" width="52" height="18" forecolor="#000000" uuid="30d376e5-8d27-4449-96b0-06f4be5fabbc">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c17890a9-3dc5-4f99-a29c-5c1656903d2f"/>
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font isBold="false"/>
+					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[address]]></text>
 			</staticText>
@@ -146,7 +152,7 @@
 			<frame>
 				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="b50221b5-8254-440b-8c6f-1f0b138c9259"/>
 				<textField textAdjust="StretchHeight">
-					<reportElement style="Detail" positionType="Float" x="0" y="0" width="92" height="18" uuid="6feb11f1-dd32-4802-978a-be13bbdd2088">
+					<reportElement style="Detail" positionType="Float" x="0" y="18" width="92" height="18" uuid="6feb11f1-dd32-4802-978a-be13bbdd2088">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ff8f2697-c6f4-432d-b3de-071a3d781a0f"/>
 					</reportElement>
 					<textElement textAlignment="Center">
@@ -155,7 +161,7 @@
 					<textFieldExpression><![CDATA[$F{tourist_id}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight">
-					<reportElement style="Detail" positionType="Float" x="92" y="0" width="92" height="18" uuid="3e9ae7ce-7df6-491c-afb5-34242841009c">
+					<reportElement style="Detail" positionType="Float" x="92" y="18" width="92" height="18" uuid="3e9ae7ce-7df6-491c-afb5-34242841009c">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0fcf7dd6-b8ab-4b66-a67a-e9ce1b15ac5e"/>
 					</reportElement>
 					<textElement textAlignment="Center">
@@ -164,7 +170,7 @@
 					<textFieldExpression><![CDATA[$F{nic}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight">
-					<reportElement style="Detail" positionType="Float" x="184" y="0" width="92" height="18" uuid="693ce686-732d-4bf6-9c79-3789323b1ce2">
+					<reportElement style="Detail" positionType="Float" x="184" y="18" width="92" height="18" uuid="693ce686-732d-4bf6-9c79-3789323b1ce2">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5efe466f-136a-403e-a10d-65df75d02050"/>
 					</reportElement>
 					<textElement textAlignment="Center">
@@ -173,7 +179,7 @@
 					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight">
-					<reportElement style="Detail" positionType="Float" x="276" y="0" width="135" height="18" uuid="b2beb54c-ca66-4ec2-99b8-a0581656929a">
+					<reportElement style="Detail" positionType="Float" x="276" y="18" width="135" height="18" uuid="b2beb54c-ca66-4ec2-99b8-a0581656929a">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8d014575-888d-4388-9b9c-8442ef48a492"/>
 					</reportElement>
 					<textElement textAlignment="Center">
@@ -182,7 +188,7 @@
 					<textFieldExpression><![CDATA[$F{tourist_email}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight">
-					<reportElement style="Detail" positionType="Float" x="400" y="0" width="90" height="18" uuid="c20f02ed-8068-40f1-9106-ca19f25513d3">
+					<reportElement style="Detail" positionType="Float" x="400" y="18" width="90" height="18" uuid="c20f02ed-8068-40f1-9106-ca19f25513d3">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2b3c0027-628a-4280-bf00-32f5cfcc290f"/>
 					</reportElement>
 					<textElement textAlignment="Center">
@@ -191,7 +197,7 @@
 					<textFieldExpression><![CDATA[$F{phone_number}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight">
-					<reportElement style="Detail" positionType="Float" x="500" y="0" width="52" height="18" uuid="c1c71c9d-9d47-4e1f-b57b-b6729df85779">
+					<reportElement style="Detail" positionType="Float" x="500" y="18" width="52" height="18" uuid="c1c71c9d-9d47-4e1f-b57b-b6729df85779">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c17890a9-3dc5-4f99-a29c-5c1656903d2f"/>
 					</reportElement>
 					<textElement textAlignment="Center">
@@ -213,9 +219,12 @@
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="25" splitType="Stretch">
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="50">
 			<frame>
-				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="729c3539-f946-4d0e-a0a7-bda2815ea1b0"/>
+				<reportElement mode="Opaque" x="-2" y="26" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="729c3539-f946-4d0e-a0a7-bda2815ea1b0"/>
 				<textField evaluationTime="Report">
 					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="4834e99c-7f6c-485a-b098-50e5187f2ab4"/>
 					<textElement verticalAlignment="Middle">
@@ -239,7 +248,7 @@
 				</textField>
 			</frame>
 		</band>
-	</pageFooter>
+	</lastPageFooter>
 	<summary>
 		<band splitType="Stretch"/>
 	</summary>

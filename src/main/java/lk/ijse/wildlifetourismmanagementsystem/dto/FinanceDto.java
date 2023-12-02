@@ -1,6 +1,7 @@
 package lk.ijse.wildlifetourismmanagementsystem.dto;
 
 
+import javafx.scene.control.Alert;
 import lombok.*;
 
 @Setter
@@ -9,6 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class FinanceDto {
+
 
   private String touristIds;
    private String ticketsId;

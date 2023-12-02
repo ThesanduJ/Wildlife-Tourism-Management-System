@@ -98,25 +98,7 @@ public class SignUpFormController {
             new Alert(Alert.AlertType.ERROR,"Something went wrong in a Email").show();
             return false;
         }
-//        Pattern compile2 = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,12})$");
-//        Matcher matcher2 = compile2.matcher(txtPassword.getText().toString());
-//        boolean matches2 = matcher2.matches();
-//
-//        System.out.println(txtPassword.getText().toString());
-//
-//        if (!matches2){
-//            new Alert(Alert.AlertType.ERROR,"Something went wrong in a password").show();
-//            return false;
-//        }
-//        Pattern compile3 = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,12})$");
-//        Matcher matcher3 = compile3.matcher(txtPassword.getText().toString());
-//        boolean matches3 = matcher3.matches();
-//
-//
-//        if (!matches3){
-//            new Alert(Alert.AlertType.ERROR,"Something went wrong in a password 2").show();
-//            return false;
-//        }
+
         return  true;
     }
 }

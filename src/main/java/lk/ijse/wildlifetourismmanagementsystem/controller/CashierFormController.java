@@ -8,29 +8,26 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.wildlifetourismmanagementsystem.db.DbConnection;
 import lk.ijse.wildlifetourismmanagementsystem.dto.CashierDto;
 import lk.ijse.wildlifetourismmanagementsystem.model.CashierModel;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CashierFormController {
-    @FXML
-    private JFXButton btnTouAdd;
 
-    @FXML
-    private JFXButton btnTouDelete;
+    static {
+        new Alert(Alert.AlertType.INFORMATION,"If you want to delete any data enter the cashier id you want and press delete button!!").show();
+    }
 
-    @FXML
-    private JFXButton btnTouUpdate;
-
-    @FXML
-    private JFXButton btnTouView;
-
-    @FXML
-    private AnchorPane pane1;
     @FXML
     private TextField txtAdminEmail;
 
@@ -96,6 +93,21 @@ public class CashierFormController {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
     }
+    @FXML
+    void btnViewOnAction(ActionEvent event) throws SQLException, JRException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/reports/cashier.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport,
+                        null,
+                        DbConnection.getInstance().getConnection()
+                );
+
+        JasperViewer.viewReport(jasperPrint, false);
+    }
 
 
     public boolean isValidate(){
@@ -118,15 +130,6 @@ public class CashierFormController {
             return false;
         }
 
-//        Pattern compile2 = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,12})$");
-//        Matcher matcher2 = compile2.matcher(txtCashierPassword.getText());
-//        boolean matches2 = matcher2.matches();
-//
-//
-//        if (!matches2){
-//            new Alert(Alert.AlertType.ERROR,"Something went wrong in a Cashier password").show();
-//            return false;
-//        }
 
         Pattern compile3 = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$");
         Matcher matcher3 = compile3.matcher(txtAdminEmail.getText());
@@ -139,4 +142,6 @@ public class CashierFormController {
         }
         return true;
     }
+
+
 }

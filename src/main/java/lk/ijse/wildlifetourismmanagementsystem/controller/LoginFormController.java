@@ -61,8 +61,6 @@ public class LoginFormController {
     void btnLoginOnAction(ActionEvent event) throws SQLException{
         String username=txtUsername.getText();
         String password=txtPassword.getText();
-        String cUsername=cashierDtodto.getCashierUsername();
-        String cPassword=cashierDtodto.getCashierPassword();
 
         try {
             AdminModel adminModel=new AdminModel();

@@ -74,18 +74,8 @@ public class DashboardFormController {
         this.pane.getChildren().clear();
         this.pane.getChildren().add(rootNode);
     }
-//    @FXML
-//    void btnDashboardOnAction(ActionEvent event) throws IOException {
-//        Parent rootNode= FXMLLoader.load(getClass().getResource("/view/dashboard_form.fxml"));
-//        this.pane.getChildren().clear();
-//        this.pane.getChildren().add(rootNode);
-//    }
-@FXML
-void btnReportOnAction(ActionEvent event) throws IOException {
-    Parent rootNode= FXMLLoader.load(getClass().getResource("/view/reports_form.fxml"));
-    this.pane.getChildren().clear();
-    this.pane.getChildren().add(rootNode);
-}
+
+
 
 
 }

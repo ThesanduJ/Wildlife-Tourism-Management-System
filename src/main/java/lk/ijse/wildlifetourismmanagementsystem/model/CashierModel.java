@@ -1,13 +1,16 @@
 package lk.ijse.wildlifetourismmanagementsystem.model;
 
+import javafx.fxml.Initializable;
 import lk.ijse.wildlifetourismmanagementsystem.db.DbConnection;
 import lk.ijse.wildlifetourismmanagementsystem.dto.CashierDto;
 
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class CashierModel {
+public class CashierModel  {
 
 
     public boolean addCashier(CashierDto dto) throws SQLException {
@@ -22,7 +25,9 @@ public class CashierModel {
 
         boolean isSaved=pstm.executeUpdate()>0;
         return isSaved;
+
     }
+
 
     public boolean isDelete(String cashierID) throws SQLException {
         Connection connection=DbConnection.getInstance().getConnection();
@@ -45,5 +50,6 @@ public class CashierModel {
 
        return pstm.executeUpdate()>0;
     }
+
 }
 

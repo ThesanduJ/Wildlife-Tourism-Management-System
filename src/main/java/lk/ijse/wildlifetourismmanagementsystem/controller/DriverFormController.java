@@ -7,16 +7,25 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.wildlifetourismmanagementsystem.db.DbConnection;
 import lk.ijse.wildlifetourismmanagementsystem.dto.DriverDto;
 import lk.ijse.wildlifetourismmanagementsystem.model.DriverModel;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DriverFormController  {
 
+    static {
+        new Alert(Alert.AlertType.INFORMATION,"If you want to delete any data enter the driver id you want and press delete button!!").show();
+    }
 
 
     @FXML
@@ -39,8 +48,6 @@ public class DriverFormController  {
 
     @FXML
     private TextField txtPackageID;
-    @FXML
-    private AnchorPane pane;
 
     @FXML
     private ChoiceBox<String> txtViolatedLaw;
@@ -108,10 +115,19 @@ public class DriverFormController  {
     }
 
     @FXML
-    void btnTouViewOnAction(ActionEvent event) throws IOException {
-        Parent rootNode= FXMLLoader.load(getClass().getResource("/view/driver_view_form.fxml"));
-        this.pane.getChildren().clear();
-        this.pane.getChildren().add(rootNode);
+    void btnTouViewOnAction(ActionEvent event) throws IOException, SQLException, JRException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/reports/driver details.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport,
+                        null,
+                        DbConnection.getInstance().getConnection()
+                );
+
+        JasperViewer.viewReport(jasperPrint, false);
     }
     public boolean isValidate(){
         Pattern compile=Pattern.compile("[D][0-9]{3,}");

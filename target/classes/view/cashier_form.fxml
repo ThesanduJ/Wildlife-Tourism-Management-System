@@ -52,7 +52,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnTouView" layoutX="1094.0" layoutY="711.0" prefHeight="60.0" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="View">
+      <JFXButton fx:id="btnTouView" layoutX="1094.0" layoutY="711.0" onAction="#btnViewOnAction" prefHeight="60.0" prefWidth="145.0" stylesheets="@../style/touristRegistration.css" text="View">
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                <image>

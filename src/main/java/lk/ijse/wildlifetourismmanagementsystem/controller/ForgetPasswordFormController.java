@@ -1,6 +1,5 @@
 package lk.ijse.wildlifetourismmanagementsystem.controller;
 
-import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,11 +19,6 @@ public class ForgetPasswordFormController {
 
     @FXML
     private AnchorPane root;
-    @FXML
-    private JFXButton btnBackToLogin;
-
-    @FXML
-    private JFXButton btnResetPassword;
 
     @FXML
     private PasswordField forPassword;

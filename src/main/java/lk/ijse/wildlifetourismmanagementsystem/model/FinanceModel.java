@@ -95,4 +95,13 @@ public class FinanceModel {
         }
         return true;
     }
+
+    public boolean isDeleted(String id) throws SQLException {
+        Connection connection=DbConnection.getInstance().getConnection();
+        String sql="DELETE FROM finance_details WHERE tourist_id = ?";
+        PreparedStatement pstm=connection.prepareStatement(sql);
+        pstm.setString(1,id);
+
+        return pstm.executeUpdate()>0;
+    }
 }

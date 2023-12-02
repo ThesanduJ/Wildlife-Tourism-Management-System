@@ -7,25 +7,24 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import lk.ijse.wildlifetourismmanagementsystem.db.DbConnection;
 import lk.ijse.wildlifetourismmanagementsystem.dto.GuideDto;
 import lk.ijse.wildlifetourismmanagementsystem.model.GuideModel;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class GuideFormController {
-    @FXML
-    private JFXButton btnTouAdd;
 
-    @FXML
-    private JFXButton btnTouDelete;
-
-    @FXML
-    private JFXButton btnTouUpdate;
-
-    @FXML
-    private JFXButton btnTouView;
+    static {
+        new Alert(Alert.AlertType.INFORMATION,"If you want to delete any data enter the Guide's NIC you want and press delete button!!").show();
+    }
 
     @FXML
     private DatePicker date;
@@ -107,8 +106,19 @@ public class GuideFormController {
     }
 
     @FXML
-    void btnTouViewOnAction(ActionEvent event) {
+    void btnTouViewOnAction(ActionEvent event) throws SQLException, JRException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/reports/guide details.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
 
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport, //compiled report
+                        null,
+                        DbConnection.getInstance().getConnection() //database connection
+                );
+
+        JasperViewer.viewReport(jasperPrint, false);
     }
     public boolean isValidate(){
         Pattern compile=Pattern.compile("^(?:[0-9]{9}|[0-9]{12})|(v|V|x|X)$");
@@ -136,14 +146,6 @@ public class GuideFormController {
         }
 
 
-//        Pattern compile4=Pattern.compile("^(\\d{1,5}) (?:[A-Za-z]+\\s?)+, ([A-Z]{2}), (\\d{5})$\n");
-//        Matcher matcher4=compile4.matcher(txtAddress.getText());
-//        boolean matches4=matcher4.matches();
-//
-//        if (!matches4) {
-//            new Alert(Alert.AlertType.ERROR, "Something went wrong in a Guide Address").show();
-//            return false;
-//        }
         Pattern compile5=Pattern.compile("[P][0-9]{3,}");
         Matcher matcher5=compile5.matcher(txtPackage.getText());
         boolean matches5=matcher5.matches();

@@ -1,6 +1,6 @@
 package lk.ijse.wildlifetourismmanagementsystem.controller;
 
-import com.jfoenix.controls.JFXButton;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import lk.ijse.wildlifetourismmanagementsystem.db.DbConnection;
 import lk.ijse.wildlifetourismmanagementsystem.dto.FinanceDto;
 import lk.ijse.wildlifetourismmanagementsystem.dto.PackageDto;
 import lk.ijse.wildlifetourismmanagementsystem.dto.TicketDto;
@@ -17,21 +18,23 @@ import lk.ijse.wildlifetourismmanagementsystem.dto.TouristDto;
 import lk.ijse.wildlifetourismmanagementsystem.model.FinanceModel;
 import lk.ijse.wildlifetourismmanagementsystem.model.PackageModel;
 import lk.ijse.wildlifetourismmanagementsystem.model.TicketModel;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class FinanceFormController implements Initializable {
-    @FXML
-    private JFXButton btnTouAdd;
 
-    @FXML
-    private JFXButton btnTouDelete;
+    static {
+        new Alert(Alert.AlertType.INFORMATION,"If you want to delete any data enter the tourist id want and press delete button!!").show();
+    }
 
-    @FXML
-    private JFXButton btnTouView;
 
     @FXML
     private Label lblPackagePrice;
@@ -59,6 +62,7 @@ public class FinanceFormController implements Initializable {
 
     @FXML
     private TextField txtQty;
+    FinanceModel financeModel=new FinanceModel();
     @FXML
     void btnTouAddOnAction(ActionEvent event) throws SQLException {
             payment= Double.parseDouble(paidPrice.getText());
@@ -77,7 +81,7 @@ public class FinanceFormController implements Initializable {
 
 
             FinanceDto dto=new FinanceDto(touristIds,ticketsId,packagesId,ticketsPrice,packagesPrice,paidAmount,qty);
-            FinanceModel financeModel=new FinanceModel();
+
 
             try {
                 boolean isAdd=financeModel.placeBill(dto);
@@ -91,11 +95,32 @@ public class FinanceFormController implements Initializable {
 
     @FXML
     void btnTouDeleteOnAction(ActionEvent event) {
+        String id=touristId.getValue();
+        try {
+            boolean isDeleted = financeModel.isDeleted(id);
+            if (isDeleted) new Alert(Alert.AlertType.INFORMATION, "Successfully Deleted!!!").show();
+            else new Alert(Alert.AlertType.ERROR, "Something went wrong!!!").show();
 
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
     }
 
     @FXML
-    void btnTouViewOnAction(ActionEvent event) {
+    void btnTouViewOnAction(ActionEvent event) throws SQLException, JRException {
+
+        InputStream resourceAsStream = getClass().getResourceAsStream("/reports/finance.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport,
+                        null,
+                        DbConnection.getInstance().getConnection()
+                );
+
+        JasperViewer.viewReport(jasperPrint, false);
 
     }
     public  TicketModel model=new TicketModel();
@@ -179,6 +204,5 @@ public class FinanceFormController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-
 
 }

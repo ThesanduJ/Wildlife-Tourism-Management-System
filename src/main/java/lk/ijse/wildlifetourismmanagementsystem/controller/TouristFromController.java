@@ -1,23 +1,23 @@
 package lk.ijse.wildlifetourismmanagementsystem.controller;
 
-import com.jfoenix.controls.JFXButton;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
+;
+import lk.ijse.wildlifetourismmanagementsystem.db.DbConnection;
 import lk.ijse.wildlifetourismmanagementsystem.dto.TouristDto;
-import lk.ijse.wildlifetourismmanagementsystem.dto.tm.TouristTm;
 import lk.ijse.wildlifetourismmanagementsystem.model.TouristModel;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -26,26 +26,17 @@ import java.util.regex.Pattern;
 
 public class TouristFromController implements Initializable {
 
+    static {
+        new Alert(Alert.AlertType.INFORMATION,"If you want to delete any data enter the Tourist id you want and press delete button!!").show();
+    }
+
     @FXML
     private ChoiceBox<String> adultOrChild;
 
-    @FXML
-    private JFXButton btnTouAdd;
-
-    @FXML
-    private JFXButton btnTouDelete;
-
-    @FXML
-    private JFXButton btnTouUpdate;
-
-    @FXML
-    private JFXButton btnTouView;
 
     @FXML
     private ChoiceBox<String> localOrForeign;
 
-    @FXML
-    private AnchorPane pane;
 
     @FXML
     private TextField txtAddress;
@@ -142,12 +133,19 @@ public class TouristFromController implements Initializable {
     }
 
     @FXML
-    void btnTouViewOnAction(ActionEvent event) throws IOException {
-        Parent rootNode= FXMLLoader.load(getClass().getResource("/view/tourist_detail_form.fxml"));
-        Scene scene=new Scene(rootNode);
-        Stage stage=new Stage();
-        stage.setScene(scene);
-        stage.show();
+    void btnTouViewOnAction(ActionEvent event) throws IOException, JRException, SQLException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/reports/tourist details.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport, //compiled report
+                        null,
+                        DbConnection.getInstance().getConnection() //database connection
+                );
+
+        JasperViewer.viewReport(jasperPrint, false);
     }
 
     @Override
@@ -181,13 +179,6 @@ public class TouristFromController implements Initializable {
             return false;
         }
 
-//        Pattern compile4=Pattern.compile("^(?:0|94|\\+94)?(?:7|11|07|107|011|1011)[1-9]{7}$\n");
-//        Matcher matcher4=compile4.matcher(txtMobileNumber.getText());
-//        boolean matches4=matcher4.matches();
-//        if (!matches4){
-//            new Alert(Alert.AlertType.ERROR,"Something went wrong in a Mobile number").show();
-//            return false;
-//        }
         Pattern compile5 = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$");
         Matcher matcher5 = compile5.matcher(txtEmail.getText());
         boolean matches5 = matcher5.matches();
@@ -206,30 +197,6 @@ public class TouristFromController implements Initializable {
             return false;
         }
 
-//        Pattern compile7=Pattern.compile("^(\\d{1,5}) (?:[A-Za-z]+\\s?)+, ([A-Z]{2}), (\\d{5})$\n");
-//        Matcher matcher7=compile7.matcher(txtAddress.getText());
-//        boolean matches7=matcher7.matches();
-//
-//        if (!matches7){
-//            new Alert(Alert.AlertType.ERROR,"Something went wrong in a Address").show();
-//            return false;
-//        }
-//        Pattern compile8=Pattern.compile("^[A-Z][0-9]{7,9}$\n");
-//        Matcher matcher8=compile8.matcher(txtPassportId.getText());
-//        boolean matches8=matcher8.matches();
-//
-//        if (!matches8){
-//            new Alert(Alert.AlertType.ERROR,"Something went wrong in a passport id").show();
-//            return false;
-//        }
-//        Pattern compile9=Pattern.compile("^(?:[0-9]|[1-9][0-9]|[1][0-1][0-9]|120)");
-//        Matcher matcher9=compile9.matcher(txtAge.getText());
-//        boolean matches9=matcher9.matches();
-//
-//        if (!matches9){
-//            new Alert(Alert.AlertType.ERROR,"Something went wrong in a age").show();
-//            return false;
-//        }
         return true;
     }
 }
